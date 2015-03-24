@@ -1,5 +1,5 @@
 $(function() {
-  // IE8+
+  // IE9+
   var el = document.getElementById('js-el');
-  el.insertAdjacentHTML('beforebegin', '<h2>Hi!</h2>');
+  console.log(el.children);
 });
