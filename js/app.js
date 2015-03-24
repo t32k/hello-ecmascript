@@ -1,12 +1,19 @@
 $(function() {
-  // $(el).off(eventName, eventHandler);
+  // $(document).ready(function(){});
   // IE9+
   var el = document.getElementById('js-el');
   var child = document.getElementById('js-child');
   var items = document.querySelectorAll('#js-list > li');
 
-  var eventHandler = function() {
-    console.log('Click!!!!!')
+  function ready(fn) {
+    if (document.readyState != 'loading'){
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
   }
-  el.addEventListener('click', eventHandler);
+  ready(function(){
+    console.log('Ready!')
+  });
 });
+
