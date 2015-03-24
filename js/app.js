@@ -1,9 +1,9 @@
 $(function() {
-  // $(el).replaceWith(string);
+  // $(el).attr('tabindex', 3);
   // IE8+
   var el = document.getElementById('js-el');
   var child = document.getElementById('js-child');
   var items = document.querySelectorAll('#js-list > li');
 
-  el.outerHTML = 'Replaced!';
+  el.setAttribute('tabindex', 3);
 });
