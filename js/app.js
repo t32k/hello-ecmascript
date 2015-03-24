@@ -1,6 +1,17 @@
 $(function() {
-  var request = nex XMLHttpRequest();
-  request.open('POST', '/my/url', true);
-  request.setRequestHeader('Content-Type',  'application/x-www-form-urlencoded; charset=UTF-8');
-  request.send(data);
+  var request = new XMLHttpRequest();
+  request.open('GET', '/my/url', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      var resp = request.responseText;
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
+
+  request.onerror = function() {
+    // There was a connection error of some sort
+  }
+
+  request.send();
 });
