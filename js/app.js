@@ -1,9 +1,10 @@
 $(function() {
   // IE8+
-  // $('.my #awesome selector');
+  // $(el).attr('tabindex');
   var el = document.getElementById('js-el');
   var child = document.getElementById('js-child');
   var items = document.querySelectorAll('#js-list > li');
 
-  document.querySelectorAll('.my #awesome selector');
+  var text = el.getAttribute('tabIndex');
+  console.log(text);
 });
