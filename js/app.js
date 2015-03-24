@@ -1,17 +1,18 @@
 $(function() {
-  var request = new XMLHttpRequest();
-  request.open('GET', '/my/url', true);
-  request.onload = function () {
-    if (request.status >= 200 && request.status < 400) {
-      var resp = request.responseText;
-    } else {
-      // We reached our target server, but it returned an error
-    }
-  };
+  function fadeIn(el) {
+    el.style.opacity = 0;
 
-  request.onerror = function() {
-    // There was a connection error of some sort
+    var last = +new Date();
+    var tick = function() {
+      el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+      last = +new Date();
+
+      if (+el.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+      }
+    };
+    tick();
   }
 
-  request.send();
+  fadeIn(el);
 });
