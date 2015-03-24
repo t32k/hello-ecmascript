@@ -1,5 +1,5 @@
 $(function() {
-  // IE9+
+  // IE8+
   var el = document.getElementById('js-el');
-  console.log(el.children);
+  el.cloneNode(true);
 });
