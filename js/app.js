@@ -3,5 +3,5 @@ $(function() {
   var el = document.getElementById('js-el');
   var child = document.getElementById('js-child');
 
-  console.log(el !== child && el.contains(child));
+  console.log(el.querySelector('#js-child') !== null);
 });
