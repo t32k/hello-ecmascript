@@ -1,4 +1,9 @@
 $(function() {
   var el = document.getElementById('js-el');
-  el.style.display = '';
+
+  if (el.classList) {
+    el.classList.add('foo');
+  } else {
+    el.className += ' ' + 'f00';
+  }
 });
