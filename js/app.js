@@ -1,5 +1,7 @@
 $(function() {
   // IE8+
   var el = document.getElementById('js-el');
-  el.cloneNode(true);
+  var child = document.getElementById('js-child');
+
+  console.log(el !== child && el.contains(child));
 });
