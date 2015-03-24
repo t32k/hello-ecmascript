@@ -1,10 +1,10 @@
 $(function() {
   // IE8+
-  // $(el).html();
+  // $('<div>').append($(el).clone()).html();
   var el = document.getElementById('js-el');
   var child = document.getElementById('js-child');
   var items = document.querySelectorAll('#js-list > li');
 
-  var text = el.innerHTML;
+  var text = el.outerHTML;
   console.log(text);
 });
