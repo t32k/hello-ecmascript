@@ -8,5 +8,5 @@ $(function() {
   var eventHandler = function() {
     console.log('Click!!!!!')
   }
-  el.removeEventListener('click', eventHandler);
+  el.addEventListener('click', eventHandler);
 });
