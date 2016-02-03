@@ -26,4 +26,6 @@ var bob = {
 
 ## Links
 
-- [cht8687/You-Dont-Need-Lodash-Underscore: Lists of Javascript methods which you can use natively](https://github.com/cht8687/You-Dont-Need-Lodash-Underscore)
+- https://github.com/cht8687/You-Dont-Need-Lodash-Underscore
+- https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore
+- http://youmightnotneedjquery.com/
