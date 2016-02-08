@@ -29,3 +29,4 @@ var bob = {
 - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore
 - https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore
 - http://youmightnotneedjquery.com/
+- https://github.com/lodash/lodash/wiki/Changelog#compatibility-warnings
