@@ -30,3 +30,4 @@ var bob = {
 - https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore
 - http://youmightnotneedjquery.com/
 - https://github.com/lodash/lodash/wiki/Changelog#compatibility-warnings
+- http://postd.cc/es6-cheatsheet/
