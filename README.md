@@ -1,5 +1,3 @@
-# Learn ES2015
-
 ## Arrows and Lexical This
 
 ```js
