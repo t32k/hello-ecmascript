@@ -156,9 +156,10 @@
 
 ## _.find
 
+配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
+
 :construction:  IE, Opera未サポート
 
-配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
 
 ```javascript
   var users = [
@@ -173,6 +174,7 @@
   // Native
   users.find((element) => element.age < 40); // output: object for 'barney'
 ```
+
 
 ## _.findIndex
 
@@ -199,7 +201,7 @@
 
 ## _.indexOf
 
-引数に与えられた内容と同じ内容を持つ配列要素の内、最初のものの添字を返します。存在しない場合は`-1`を返す。
+引数に与えられた内容と同じ内容を持つ配列要素の内、**最初**のものの添字を返します。存在しない場合は`-1`を返す。
 
 ```javascript
   var array = [2, 9, 9];
@@ -213,22 +215,94 @@
   console.log(result);  // output: 0
 ```
 
+
 ## _.lastIndexOf
 
+配列中で与えられた要素が見つけられた**最後**の添字を返し、もし存在しなければ`-1`を返す。
 
 ```javascript
-// Underscore/Lodash
   var array = [2, 9, 9, 4, 3, 6];
+
+  // Lodash
   var result = _.lastIndexOf(array, 9);    
-  console.log(result); 
-  // output: 2
+  console.log(result);  // output: 2
 
   // Native
-  var array = [2, 9, 9, 4, 3, 6];
   var result = array.lastIndexOf(9);    
-  console.log(result); 
-  // output: 2
+  console.log(result); // output: 2
 ```
+
+
+## _.includes
+
+特定の要素が配列に含まれているかどうかを`true`または`false`で返す。
+
+:construction:  IE未サポート
+
+```javascript
+  var array = [1, 2, 3];
+
+  // Lodash - also called with _.contains
+  _.includes(array, 1); // → true
+
+  // Native
+  array.includes(1); // → true
+```
+
+
+## _.keys
+
+`object`で直接発見された列挙可能なプロパティに対応する文字列を要素とする配列を返す。
+
+```javascript
+  // Lodash 
+  var result = _.keys({one: 1, two: 2, three: 3});
+  console.log(result);　// output: ["one", "two", "three"]
+
+  // Native
+  var result2 = Object.keys({one: 1, two: 2, three: 3});
+  console.log(result2); // output: ["one", "two", "three"]
+```
+
+
+## _.size
+
+コレクションの値の数を返す。
+
+```javascript
+  // Lodash
+  var result = _.size({one: 1, two: 2, three: 3});
+  console.log(result); // output: 3
+
+  // Native
+  var result2 = Object.keys({one: 1, two: 2, three: 3}).length;
+  console.log(result2); // output: 3
+```
+
+
+## _.isNaN
+
+`NaN`（非数）かどうかを判定する。
+
+```javascript
+  // Lodash
+  console.log(_.isNaN(NaN)); // output: true
+
+  // Native
+  console.log(isNaN(NaN)); // output: true
+```
+
+
+## _.reverse
+
+
+
+
+
+
+
+
+
 
 
 
