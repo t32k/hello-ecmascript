@@ -8,12 +8,12 @@
 
 # TOC
 
-- LodashからJavaScript
-- CoffeeScriptからJavaScript
-- JavaScriptからJavaScript2015
+- [Lodash to JavaScript](https://github.com/t32k/goodbye-coffee#lodashtojavascript)
+- CoffeeScript to JavaScript
+- JavaScript to JavaScript2015
 
 
-# LodashからJavaScript
+# Lodash to JavaScript
 
 
 ## _.each
