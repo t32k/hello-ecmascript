@@ -21,7 +21,7 @@
 与えられた関数を、配列の各要素に対して一度ずつ実行する。
 
 ```javascript
-	// Lodashは`false`を返すことでイテレーションを抜けることができる
+  // Lodashは`false`を返すことでイテレーションを抜けることができる
   _.each([1, 2, 3], function(value, index) {
     console.log(value);
     return false;
@@ -396,7 +396,7 @@
 ```
 
 
-## Links
+# Resources
 
 - [DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
 - [cht8687/You-Dont-Need-Lodash-Underscore](https://github.com/cht8687/You-Dont-Need-Lodash-Underscore)
