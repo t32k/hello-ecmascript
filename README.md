@@ -295,6 +295,86 @@
 
 ## _.reverse
 
+配列の要素を反転する。最初の要素は最後に、最後の要素は最初になる。
+
+```javascript
+  var array = [1, 2, 3];
+
+  // Lodash
+  console.log(_.reverse(array)); // output: [3, 2, 1]
+
+  // Native
+  console.log(array.reverse()); // output: [3, 2, 1]
+```
+
+
+## _.join
+
+配列のすべての要素を繋いで文字列にする。
+
+```javascript
+  // Lodash
+  var result = _.join(['one', 'two', 'three'], '--');
+  console.log(result); // output: 'one--two--three'
+
+  // Native
+  var result = ['one', 'two', 'three'].join('--');
+  console.log(result) // output: 'one--two--three'
+```
+
+
+## _.toUpper
+
+呼び出す文字列の値を**大文字**に変換して返す。
+
+```javascript
+  // Lodash
+  var result = _.toUpper('foobar');
+  console.log(result); // output: 'FOOBAR'
+
+  // Native
+  var result = 'foobar'.toUpperCase();
+  console.log(result); // output: 'FOOBAR'
+```
+
+
+## _.toLower
+
+呼び出す文字列の値を**小文字**に変換して返す。
+
+
+```javascript
+  // Lodash
+  var result = _.toLower('FOOBAR');
+  console.log(result); // output: 'foobar'
+
+  // Native
+  var result = 'FOOBAR'.toLowerCase();
+  console.log(result); // output: 'foobar'
+```
+
+
+## _.trim
+
+文字列の両端の空白を削除する。
+
+
+```javascript
+  // Lodash
+  var result = _.trim(' abc ');
+  console.log(result); // output: 'abc'
+
+  // Native
+  var result = ' abc '.trim();
+  console.log(result); // output: 'abc'
+```
+
+
+
+
+
+
+
 
 
 
