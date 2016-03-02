@@ -156,9 +156,9 @@
 
 ## _.find
 
-配列内の要素が指定されたテスト関数を満たす場合、配列内の値を返します。そうでない場合は`undefined`を返す。
+:construction:  IE, Opera未サポート
 
-:construction: IE, Operaサポートしていない
+配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
 
 ```javascript
   var users = [
@@ -174,52 +174,69 @@
   users.find((element) => element.age < 40); // output: object for 'barney'
 ```
 
+## _.findIndex
 
+配列内の要素が指定されたテスト関数を満たす場合、配列内の**インデックス**を返し、そうでない場合は`-1`を返す。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## アロー関数と静的this
+:construction:  IE, Opera未サポート
 
 ```javascript
-// Expression bodies
-var odds = evens.map(v => v + 1);
-var nums = evens.map((v, i) => v + i);
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
 
-// Statement bodies
-nums.forEach(v => {
-  if (v % 5 === 0)
-    fives.push(v);
-});
+  // Lodash
+  var index =  _.findIndex(users, function(element) { return element.age >= 40; });
+  console.log(index); // output: 1
 
-// Lexical this
-var bob = {
-  _name: "Bob",
-  _friends: [],
-  printFriends() {
-    this._friends.forEach(f =>
-      console.log(this._name + " knows " + f));
-  }
-};
+  // Native
+  var index =  users.findIndex((element) =>  element.age >= 40);
+  console.log(index); // output: 1
 ```
+
+
+## _.indexOf
+
+引数に与えられた内容と同じ内容を持つ配列要素の内、最初のものの添字を返します。存在しない場合は`-1`を返す。
+
+```javascript
+  var array = [2, 9, 9];
+
+  // Lodash
+  var result = _.indexOf(array, 2);    
+  console.log(result);  // output: 0
+
+  // Native
+  var result = array.indexOf(2);    
+  console.log(result);  // output: 0
+```
+
+## _.lastIndexOf
+
+
+```javascript
+// Underscore/Lodash
+  var array = [2, 9, 9, 4, 3, 6];
+  var result = _.lastIndexOf(array, 9);    
+  console.log(result); 
+  // output: 2
+
+  // Native
+  var array = [2, 9, 9, 4, 3, 6];
+  var result = array.lastIndexOf(9);    
+  console.log(result); 
+  // output: 2
+```
+
+
 
 ## Links
 
 - [DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet#replacing-iifes-with-blocks)
 - [stevemao/You-Dont-Know-About-Lodash-Underscore](https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore)
-
+- [You Might Not Need Underscore | Reindex](https://www.reindex.io/blog/you-might-not-need-underscore/)
 - https://github.com/cht8687/You-Dont-Need-Lodash-Underscore
 - https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore
 - https://github.com/lodash/lodash/wiki/Changelog#compatibility-warnings
