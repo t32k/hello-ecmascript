@@ -1,8 +1,10 @@
 
+特に記述がない場合、![IE](ie.png)IE9以上で動作する。
+
+
 - LodashからJavaScript
 - CoffeeScriptからJavaScript
 - JavaScriptからJavaScript2015
-
 
 
 # LodashからJavaScript
@@ -92,7 +94,88 @@
  ```
 
 
-隣り合う 2つの配列要素に対して（左から右へ）同時に関数を適用し、単一の値にします。
+## _.reduce
+
+隣り合う2つの配列要素に対して**左から右へ**同時に関数を適用し、単一の値にする。
+
+```javascript
+  var array = [0, 1, 2, 3, 4];
+
+  // Lodash
+  var result = _.reduce(array, function (previousValue, currentValue, currentIndex, array) {
+    return previousValue + currentValue;
+  });
+  console.log(result); // output: 10
+
+  // Native
+  var result = array.reduce((previousValue, currentValue, currentIndex, array) =>
+    return previousValue + currentValue;
+  );
+  console.log(result); // output: 10
+```
+
+
+## _.reduceRight
+
+隣り合う2つの配列要素に対して**右からから左へ**同時に関数を適用し、単一の値にします。
+
+```javascript
+  var array = [0, 1, 2, 3, 4];
+
+  // Lodash
+  var result = _.reduceRight(array, function (previousValue, currentValue, currentIndex, array) {
+    return previousValue - currentValue;
+  });
+  console.log(result);　// output: -2
+
+  // Native
+  var result = array.reduceRight((previousValue, currentValue, currentIndex, array) =>
+    return previousValue - currentValue;
+  );
+  console.log(result);　// output: -2
+```
+
+
+## _.filter
+
+引数として与えられたテスト関数を各配列要素に対して実行し、それに合格したすべての配列要素からなる新しい配列を生成する。
+
+```javascript
+  var array = [12, 5, 8, 130, 44];
+  function isBigEnough(value) {
+    return value >= 10;
+  } 
+
+  // Lodash
+  var filtered = _.filter(array, isBigEnough);
+  console.log(filtered);　// output: [12, 130, 44]
+
+  // Native
+  var filtered = array.filter(isBigEnough);
+  console.log(filtered);　// output: [12, 130, 44]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
