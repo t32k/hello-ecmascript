@@ -1,12 +1,12 @@
 
-＃ 基本方針
+# 基本方針
 
 - できるかぎり、VanillaなJavaScriptを記述するよう心がける。
 - 特に記述がない場合、IE9以上で動作する。
 - :construction:の場合、Babel導入後に使用可能
 
 
-＃ TOC
+# TOC
 
 - LodashからJavaScript
 - CoffeeScriptからJavaScript
