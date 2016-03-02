@@ -1,5 +1,5 @@
 
-特に記述がない場合、![IE](ie.png)IE9以上で動作する。
+特に記述がない場合、IE9以上で動作する。
 
 
 - LodashからJavaScript
@@ -45,7 +45,7 @@
   console.log(array2); // output: [2, 4, 6]
 
   // Native
-  var array2 = array1.map((value, index) => return value * 2);
+  var array2 = array1.map((value, index) => value * 2);
   console.log(array2); // output: [2, 4, 6]
 ```
 
@@ -108,9 +108,7 @@
   console.log(result); // output: 10
 
   // Native
-  var result = array.reduce((previousValue, currentValue, currentIndex, array) =>
-    return previousValue + currentValue;
-  );
+  var result = array.reduce((previousValue, currentValue, currentIndex, array) => previousValue + currentValue);
   console.log(result); // output: 10
 ```
 
@@ -156,12 +154,25 @@
 ```
 
 
+## _.find
 
+配列内の要素が指定されたテスト関数を満たす場合、配列内の値を返します。そうでない場合は`undefined`を返す。
 
+:construction: IE, Operaサポートしていない
 
+```javascript
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
 
+  // Lodash
+  _.find(users, function(element) { return element.age < 40; }); // output: object for 'barney'
 
-
+  // Native
+  users.find((element) => element.age < 40); // output: object for 'barney'
+```
 
 
 
