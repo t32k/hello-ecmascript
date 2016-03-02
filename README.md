@@ -1,6 +1,12 @@
 
-特に記述がない場合、IE9以上で動作する。
+＃ 基本方針
 
+- できるかぎり、VanillaなJavaScriptを記述するよう心がける。
+- 特に記述がない場合、IE9以上で動作する。
+- :construction:の場合、Babel導入後に使用可能
+
+
+＃ TOC
 
 - LodashからJavaScript
 - CoffeeScriptからJavaScript
@@ -369,29 +375,30 @@
   console.log(result); // output: 'abc'
 ```
 
+## _.pluck
 
+`map`の最も一般的なユースケースであろうバージョン。プロパティの値を抽出する。
 
+```javascript
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
 
+  // Lodash
+  var array =  _.pluck(users, 'age');
+  console.log(array); // output: [36, 40, 1]
 
-
-
-
-
-
-
-
-
-
-
-
+  // Native
+  var array =  users.map(value => value.age);
+  console.log(array); // output: [36, 40, 1]
+```
 
 
 ## Links
 
-- [DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet#replacing-iifes-with-blocks)
-- [stevemao/You-Dont-Know-About-Lodash-Underscore](https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore)
+- [DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
+- [cht8687/You-Dont-Need-Lodash-Underscore](https://github.com/cht8687/You-Dont-Need-Lodash-Underscore)
 - [You Might Not Need Underscore | Reindex](https://www.reindex.io/blog/you-might-not-need-underscore/)
-- https://github.com/cht8687/You-Dont-Need-Lodash-Underscore
-- https://github.com/stevemao/You-Dont-Know-About-Lodash-Underscore
-- https://github.com/lodash/lodash/wiki/Changelog#compatibility-warnings
-- http://youmightnotneedjquery.com/
+- [Changelog · lodash/lodash Wiki](https://github.com/lodash/lodash/wiki/Changelog#compatibility-warnings)
