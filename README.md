@@ -396,6 +396,53 @@
 ```
 
 
+## _.isNumber
+
+引数に指定された値が整数かどうかを判定するメソッド。Lodashは数値かどうかを判定。
+
+:construction:  IE, Opera, Safari未サポート
+
+```javascript
+  // Lodash
+  _.isNumber(3); // -> true
+
+  // Native
+  Number.isInteger(3); // -> true
+```
+
+## _.isArray
+
+引数が配列であればtrueを、そうでなければfalseを返します。
+
+```javascript
+  // Lodash
+  _.isArray([1, 2, 3]); // -> true
+
+  // Native
+  Array.isArray([1, 2, 3]); // -> true
+```
+
+## _.sum
+
+`array`の値の合計値を計算する。
+
+```javascript
+  // Lodash
+  _.sum([4, 2, 8, 6]);　// -> 20
+
+  // Native
+  [4, 2, 8, 6].reduce((pv, cv) => pv + cv);　// -> 20
+```
+
+## task
+
+- _.isEmpty
+- _.isEqual
+- _.isNull
+- _.isUndefined
+- _.isFunction
+
+
 # Resources
 
 - [DrkSephy/es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
