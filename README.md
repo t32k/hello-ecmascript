@@ -404,10 +404,10 @@
 
 ```javascript
   // Lodash
-  _.isNumber(3); // -> true
+  _.isNumber(3); // → true
 
   // Native
-  Number.isInteger(3); // -> true
+  Number.isInteger(3); // → true
 ```
 
 ## _.isArray
@@ -416,10 +416,10 @@
 
 ```javascript
   // Lodash
-  _.isArray([1, 2, 3]); // -> true
+  _.isArray([1, 2, 3]); // → true
 
   // Native
-  Array.isArray([1, 2, 3]); // -> true
+  Array.isArray([1, 2, 3]); // → true
 ```
 
 ## _.sum
@@ -428,10 +428,10 @@
 
 ```javascript
   // Lodash
-  _.sum([4, 2, 8, 6]);　// -> 20
+  _.sum([4, 2, 8, 6]);　// → 20
 
   // Native
-  [4, 2, 8, 6].reduce((pv, cv) => pv + cv);　// -> 20
+  [4, 2, 8, 6].reduce((pv, cv) => pv + cv);　// → 20
 ```
 
 
@@ -441,25 +441,56 @@
 
 ```javascript
   var array = [4, 2, 8, 6];
-  
+
   // Lodash
-  _.min(array); // -> 2
-  _.max(array); // -> 8
+  _.min(array); // → 2
+  _.max(array); // → 8
 
   // Native
-  Math.min.apply(null, array); // -> 2
-  Math.max.apply(null, array); // -> 8
+  Math.min.apply(null, array); // → 2
+  Math.max.apply(null, array); // → 8
 ```
 
 
-## task
+## _.first(_.head), _.last
 
-- _.merge
-- _.isEmpty
-- _.isEqual
-- _.isNull
-- _.isUndefined
-- _.isFunction
+`array`の最初もしくは最後の値を取得する。
+
+```javascript
+  var array = [[1, 2, 3];
+
+  // Lodash
+  _.first(array); // → 1
+  _.last(array); // → 3
+
+  // Native
+  array[0]; // → 1
+  array[array.length - 1]; // → 3
+```
+
+
+## _.remove
+
+引数で与えた関数の条件にマッチするものを`array`からすべて削除する。`_.remove`は破壊的メソッド。
+
+```javascript
+  var array = [1, 2, 3, 4];
+
+  // Lodash
+  var evens = _.remove(array, function(n) {
+    return n % 2 == 0;
+  });
+  console.log(array); // → [1, 3]
+  console.log(evens); // → [2, 4]
+
+  // Native
+  var evens = array.filter(n => n % 2 == 0);
+  console.log(array); // → [1, 2, 3, 4]
+  console.log(evens); // → [2, 4]
+
+```
+
+
 
 
 # Resources
