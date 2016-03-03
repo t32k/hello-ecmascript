@@ -4,17 +4,48 @@
 - できるかぎり、VanillaなJavaScriptを記述するよう心がける。
 - 特に記述がない場合、IE9以上で動作する。
 - :construction:の場合、Babel導入後に使用可能
+- // Lodash v3.10.1 -> v4.6.1
 
 
 # TOC
 
 - [Lodash to JavaScript](https://github.com/t32k/goodbye-coffee#lodashtojavascript)
-- CoffeeScript to JavaScript
-- JavaScript to JavaScript2015
+- Lodash v3.10.1 to v4.6.1
 
 
 # Lodash to JavaScript
 
+
+## _.assign / _.merge
+
+１つ以上のsourceオブジェクトの保有する全ての列挙プロパティの値を、targetのオブジェクトへコピーする。
+`_.merge`は再帰的にマージする。
+
+:construction: IE, Opera, Safari 未サポート
+
+```javascript
+var o1 = { a: 1 };
+var o2 = { b: 2 };
+var o3 = { c: 3 };
+
+// Lodash
+var obj = _.assign({}, o1, o2, o3);
+console.log(obj); // → {a:1, b:2, c:3}
+
+// Native
+var obj = Object.assign({}, o1, o2, o3);
+console.log(obj); // → {a:1, b:2, c:3}
+
+// Lodash
+var users = {
+  'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
+};
+var ages = {
+  'data': [{ 'age': 36 }, { 'age': 40 }]
+};
+_.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user': 'fred', 'age': 40 }] }
+
+```
 
 ## _.each
 
@@ -26,14 +57,14 @@
     console.log(value);
     return false;
   });
-  // output: 1
+  // → 1
 
   // Native
   [1, 2, 3].forEach((value, index) => {
   	console.log(value);
     return false;
   });
-  // output: 1 2 3
+  // → 1 2 3
 ```
 
 
@@ -48,11 +79,11 @@
   var array2 = _.map(array1, function(value, index) {
     return value * 2;
   });
-  console.log(array2); // output: [2, 4, 6]
+  console.log(array2); // → [2, 4, 6]
 
   // Native
   var array2 = array1.map((value, index) => value * 2);
-  console.log(array2); // output: [2, 4, 6]
+  console.log(array2); // → [2, 4, 6]
 ```
 
 
@@ -69,12 +100,12 @@
 
   // Lodash
   var result = _.every(array, isBigEnough);
-  console.log(result); // output: true
+  console.log(result); // → true
 
 
   // Native
   var result = array.every(isBigEnough);
-  console.log(result); // output: true
+  console.log(result); // → true
  ```
 
 
@@ -91,12 +122,12 @@
 
   // Lodash
   var result = _.some(array, isBigEnough);
-  console.log(result); // output: true
+  console.log(result); // → true
 
 
   // Native
   var result = array.some(isBigEnough);
-  console.log(result); // output: true
+  console.log(result); // → true
  ```
 
 
@@ -111,11 +142,11 @@
   var result = _.reduce(array, function (previousValue, currentValue, currentIndex, array) {
     return previousValue + currentValue;
   });
-  console.log(result); // output: 10
+  console.log(result); // → 10
 
   // Native
   var result = array.reduce((previousValue, currentValue, currentIndex, array) => previousValue + currentValue);
-  console.log(result); // output: 10
+  console.log(result); // → 10
 ```
 
 
@@ -130,13 +161,13 @@
   var result = _.reduceRight(array, function (previousValue, currentValue, currentIndex, array) {
     return previousValue - currentValue;
   });
-  console.log(result);　// output: -2
+  console.log(result);　// → -2
 
   // Native
   var result = array.reduceRight((previousValue, currentValue, currentIndex, array) =>
     return previousValue - currentValue;
   );
-  console.log(result);　// output: -2
+  console.log(result);　// → -2
 ```
 
 
@@ -152,11 +183,11 @@
 
   // Lodash
   var filtered = _.filter(array, isBigEnough);
-  console.log(filtered);　// output: [12, 130, 44]
+  console.log(filtered);　// → [12, 130, 44]
 
   // Native
   var filtered = array.filter(isBigEnough);
-  console.log(filtered);　// output: [12, 130, 44]
+  console.log(filtered);　// → [12, 130, 44]
 ```
 
 
@@ -175,10 +206,10 @@
   ];
 
   // Lodash
-  _.find(users, function(element) { return element.age < 40; }); // output: object for 'barney'
+  _.find(users, function(element) { return element.age < 40; }); // → object for 'barney'
 
   // Native
-  users.find((element) => element.age < 40); // output: object for 'barney'
+  users.find((element) => element.age < 40); // → object for 'barney'
 ```
 
 
@@ -197,11 +228,11 @@
 
   // Lodash
   var index =  _.findIndex(users, function(element) { return element.age >= 40; });
-  console.log(index); // output: 1
+  console.log(index); // → 1
 
   // Native
   var index =  users.findIndex((element) =>  element.age >= 40);
-  console.log(index); // output: 1
+  console.log(index); // → 1
 ```
 
 
@@ -214,11 +245,11 @@
 
   // Lodash
   var result = _.indexOf(array, 2);    
-  console.log(result);  // output: 0
+  console.log(result);  // → 0
 
   // Native
   var result = array.indexOf(2);    
-  console.log(result);  // output: 0
+  console.log(result);  // → 0
 ```
 
 
@@ -231,11 +262,11 @@
 
   // Lodash
   var result = _.lastIndexOf(array, 9);    
-  console.log(result);  // output: 2
+  console.log(result);  // → 2
 
   // Native
   var result = array.lastIndexOf(9);    
-  console.log(result); // output: 2
+  console.log(result); // → 2
 ```
 
 
@@ -263,11 +294,11 @@
 ```javascript
   // Lodash 
   var result = _.keys({one: 1, two: 2, three: 3});
-  console.log(result);　// output: ["one", "two", "three"]
+  console.log(result);　// → ["one", "two", "three"]
 
   // Native
   var result2 = Object.keys({one: 1, two: 2, three: 3});
-  console.log(result2); // output: ["one", "two", "three"]
+  console.log(result2); // → ["one", "two", "three"]
 ```
 
 
@@ -278,11 +309,11 @@
 ```javascript
   // Lodash
   var result = _.size({one: 1, two: 2, three: 3});
-  console.log(result); // output: 3
+  console.log(result); // → 3
 
   // Native
   var result2 = Object.keys({one: 1, two: 2, three: 3}).length;
-  console.log(result2); // output: 3
+  console.log(result2); // → 3
 ```
 
 
@@ -292,10 +323,10 @@
 
 ```javascript
   // Lodash
-  console.log(_.isNaN(NaN)); // output: true
+  console.log(_.isNaN(NaN)); // → true
 
   // Native
-  console.log(isNaN(NaN)); // output: true
+  console.log(isNaN(NaN)); // → true
 ```
 
 
@@ -307,10 +338,10 @@
   var array = [1, 2, 3];
 
   // Lodash
-  console.log(_.reverse(array)); // output: [3, 2, 1]
+  console.log(_.reverse(array)); // → [3, 2, 1]
 
   // Native
-  console.log(array.reverse()); // output: [3, 2, 1]
+  console.log(array.reverse()); // → [3, 2, 1]
 ```
 
 
@@ -321,11 +352,11 @@
 ```javascript
   // Lodash
   var result = _.join(['one', 'two', 'three'], '--');
-  console.log(result); // output: 'one--two--three'
+  console.log(result); // → 'one--two--three'
 
   // Native
   var result = ['one', 'two', 'three'].join('--');
-  console.log(result) // output: 'one--two--three'
+  console.log(result) // → 'one--two--three'
 ```
 
 
@@ -336,11 +367,11 @@
 ```javascript
   // Lodash
   var result = _.toUpper('foobar');
-  console.log(result); // output: 'FOOBAR'
+  console.log(result); // → 'FOOBAR'
 
   // Native
   var result = 'foobar'.toUpperCase();
-  console.log(result); // output: 'FOOBAR'
+  console.log(result); // → 'FOOBAR'
 ```
 
 
@@ -352,11 +383,11 @@
 ```javascript
   // Lodash
   var result = _.toLower('FOOBAR');
-  console.log(result); // output: 'foobar'
+  console.log(result); // → 'foobar'
 
   // Native
   var result = 'FOOBAR'.toLowerCase();
-  console.log(result); // output: 'foobar'
+  console.log(result); // → 'foobar'
 ```
 
 
@@ -368,11 +399,11 @@
 ```javascript
   // Lodash
   var result = _.trim(' abc ');
-  console.log(result); // output: 'abc'
+  console.log(result); // → 'abc'
 
   // Native
   var result = ' abc '.trim();
-  console.log(result); // output: 'abc'
+  console.log(result); // → 'abc'
 ```
 
 ## _.pluck
@@ -388,11 +419,11 @@
 
   // Lodash
   var array =  _.pluck(users, 'age');
-  console.log(array); // output: [36, 40, 1]
+  console.log(array); // → [36, 40, 1]
 
   // Native
   var array =  users.map(value => value.age);
-  console.log(array); // output: [36, 40, 1]
+  console.log(array); // → [36, 40, 1]
 ```
 
 
@@ -452,7 +483,7 @@
 ```
 
 
-## _.first(_.head), _.last
+## _.first( _.head ), _.last
 
 `array`の最初もしくは最後の値を取得する。
 
@@ -491,6 +522,24 @@
 ```
 
 
+## _.bind
+
+呼び出された時に新しい関数を生成する。最初の引数 は新しい関数の`this`キーワードにセットされる。2個目以降の引数は、新しい関数より前に、ターゲット関数の引数として与えられる。
+
+```javascript
+  var greet = function(greeting, punctuation) {
+    return greeting + ' ' + this.user + punctuation;
+  };
+  var object = { 'user': 'fred' };
+
+  // Lodash
+  var bound = _.bind(greet, object, 'Hi');
+  bound('!'); // → 'Hi fred!'
+
+  // Native
+  var bound = greet.bind(object, 'Hi');
+  bound('!'); // → 'Hi fred!'
+```
 
 
 # Resources
