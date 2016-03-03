@@ -434,8 +434,27 @@
   [4, 2, 8, 6].reduce((pv, cv) => pv + cv);　// -> 20
 ```
 
+
+## _.min, _.max
+
+引数として与えた複数の数の中で最小または最大の数を返す。
+
+```javascript
+  var array = [4, 2, 8, 6];
+  
+  // Lodash
+  _.min(array); // -> 2
+  _.max(array); // -> 8
+
+  // Native
+  Math.min.apply(null, array); // -> 2
+  Math.max.apply(null, array); // -> 8
+```
+
+
 ## task
 
+- _.merge
 - _.isEmpty
 - _.isEqual
 - _.isNull
