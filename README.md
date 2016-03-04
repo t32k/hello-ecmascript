@@ -16,7 +16,7 @@
 # Lodash to JavaScript
 
 
-## _.assign / _.merge　:construction:
+## _.assign / _.merge :construction:
 
 １つ以上のsourceオブジェクトの保有する全ての列挙プロパティの値を、targetのオブジェクトへコピーする。
 `_.merge`は再帰的にマージする。
@@ -189,7 +189,7 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.find　:construction: 
+## _.find :construction: 
 
 配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
 
@@ -208,7 +208,7 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.findIndex　:construction: 
+## _.findIndex :construction: 
 
 配列内の要素が指定されたテスト関数を満たす場合、配列内の**インデックス**を返し、そうでない場合は`-1`を返す。
 
@@ -264,7 +264,7 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.includes　:construction:
+## _.includes :construction:
 
 特定の要素が配列に含まれているかどうかを`true`または`false`で返す。
 
@@ -419,7 +419,7 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.isNumber　:construction:
+## _.isNumber :construction:
 
 引数に指定された値が整数かどうかを判定するメソッド。Lodashは数値かどうかを判定。
 
@@ -532,7 +532,7 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.toArray　:construction:
+## _.toArray :construction:
 
 配列型 (array-like) オブジェクトや反復可能 (iterable) オブジェクトから新しい`Array`インスタンスを生成する。
 
