@@ -16,12 +16,10 @@
 # Lodash to JavaScript
 
 
-## _.assign / _.merge
+## _.assign / _.merge　:construction:
 
 １つ以上のsourceオブジェクトの保有する全ての列挙プロパティの値を、targetのオブジェクトへコピーする。
 `_.merge`は再帰的にマージする。
-
-:construction: IE, Opera, Safari 未サポート
 
 ```javascript
 var o1 = { a: 1 };
@@ -191,12 +189,9 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.find
+## _.find　:construction: 
 
 配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
-
-:construction:  IE, Opera未サポート
-
 
 ```javascript
   var users = [
@@ -213,11 +208,10 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.findIndex
+## _.findIndex　:construction: 
 
 配列内の要素が指定されたテスト関数を満たす場合、配列内の**インデックス**を返し、そうでない場合は`-1`を返す。
 
-:construction:  IE, Opera未サポート
 
 ```javascript
   var users = [
@@ -270,11 +264,9 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.includes
+## _.includes　:construction:
 
 特定の要素が配列に含まれているかどうかを`true`または`false`で返す。
-
-:construction:  IE未サポート
 
 ```javascript
   var array = [1, 2, 3];
@@ -427,11 +419,9 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
-## _.isNumber
+## _.isNumber　:construction:
 
 引数に指定された値が整数かどうかを判定するメソッド。Lodashは数値かどうかを判定。
-
-:construction:  IE, Opera, Safari未サポート
 
 ```javascript
   // Lodash
@@ -539,6 +529,18 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   // Native
   var bound = greet.bind(object, 'Hi');
   bound('!'); // → 'Hi fred!'
+```
+
+
+## _.toArray　:construction:
+
+配列型 (array-like) オブジェクトや反復可能 (iterable) オブジェクトから新しい`Array`インスタンスを生成する。
+
+```javascript
+  _.toArray('hello'); // → ["h", "e", "l", "l", "o"]
+
+  // Native
+  Array.from('hello'); // → ["h", "e", "l", "l", "o"]
 ```
 
 
