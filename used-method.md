@@ -1,8 +1,8 @@
 o  73 _.find
 x  24 _.map
 x  23 _.filter
-x  22 _.pluck
--  21 _.merge  --> _.assign
+x  22 _.pluck 		[!REMOVE]-> Array.prototype.map()
+-  21 _.merge
 x  15 _.first
 x  13 _.sum
 x  13 _.bind
@@ -34,20 +34,20 @@ o  2 _.isNull
 o  2 _.flatten
 o  2 _.findIndex
 -  2 _.difference
--  2 _.defaults  --> _.assign
+-  2 _.defaults
 -  2 _.debounce
 x  2 _.contains
 x  1 _.trim
 -  1 _.throttle
 x  1 _.some
--  1 _.pairs
+x  1 _.pairs 		[!RENAME]-> _.toPairs
 o  1 _.isEqual
 o  1 _.isEmpty
 -  1 _.indexOf
 -  1 _.groupBy
 x  1 _.forIn
--  1 _.findWhere
+x  1 _.findWhere 	[!REMOVE]-> _.find
 -  1 _.findKey
--  1 _.extend  --> _.assign
+-  1 _.extend
 -  1 _.chunk
 -  1 _.chain
