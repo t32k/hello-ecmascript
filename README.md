@@ -16,6 +16,47 @@
 # Lodash to JavaScript
 
 
+## _.find :construction: 
+
+配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
+
+```javascript
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
+
+  // Lodash
+  _.find(users, function(element) { return element.age < 40; }); // → object for 'barney'
+
+  // Native
+  users.find((element) => element.age < 40); // → object for 'barney'
+```
+
+
+## _.findIndex :construction: 
+
+配列内の要素が指定されたテスト関数を満たす場合、配列内の**インデックス**を返し、そうでない場合は`-1`を返す。
+
+
+```javascript
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
+
+  // Lodash
+  var index =  _.findIndex(users, function(element) { return element.age >= 40; });
+  console.log(index); // → 1
+
+  // Native
+  var index =  users.findIndex((element) =>  element.age >= 40);
+  console.log(index); // → 1
+```
+
+
 ## _.assign / _.merge :construction:
 
 １つ以上のsourceオブジェクトの保有する全ての列挙プロパティの値を、targetのオブジェクトへコピーする。
@@ -45,6 +86,47 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 
 ```
 
+
+## _.includes :construction:
+
+特定の要素が配列に含まれているかどうかを`true`または`false`で返す。
+
+```javascript
+  var array = [1, 2, 3];
+
+  // Lodash - also called with _.contains
+  _.includes(array, 1); // → true
+
+  // Native
+  array.includes(1); // → true
+```
+
+
+## _.toArray :construction:
+
+配列型 (array-like) オブジェクトや反復可能 (iterable) オブジェクトから新しい`Array`インスタンスを生成する。
+
+```javascript
+  _.toArray('hello'); // → ["h", "e", "l", "l", "o"]
+
+  // Native
+  Array.from('hello'); // → ["h", "e", "l", "l", "o"]
+```
+
+
+## _.isNumber :construction:
+
+引数に指定された値が整数かどうかを判定するメソッド。Lodashは数値かどうかを判定。
+
+```javascript
+  // Lodash
+  _.isNumber(3); // → true
+
+  // Native
+  Number.isInteger(3); // → true
+```
+
+
 ## _.each
 
 与えられた関数を、配列の各要素に対して一度ずつ実行する。
@@ -66,6 +148,26 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
 ```
 
 
+## _.filter
+
+引数として与えられたテスト関数を各配列要素に対して実行し、それに合格したすべての配列要素からなる新しい配列を生成する。
+
+```javascript
+  var array = [12, 5, 8, 130, 44];
+  function isBigEnough(value) {
+    return value >= 10;
+  } 
+
+  // Lodash
+  var filtered = _.filter(array, isBigEnough);
+  console.log(filtered);　// → [12, 130, 44]
+
+  // Native
+  var filtered = array.filter(isBigEnough);
+  console.log(filtered);　// → [12, 130, 44]
+```
+
+
 ## _.map
 
 与えられた関数を配列のすべての要素に対して呼び出し、その結果からなる新しい配列を生成する。
@@ -82,6 +184,26 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   // Native
   var array2 = array1.map((value, index) => value * 2);
   console.log(array2); // → [2, 4, 6]
+```
+
+## _.pluck
+
+`map`の最も一般的なユースケースであろうバージョン。プロパティの値を抽出する。
+
+```javascript
+  var users = [
+    { 'user': 'barney',  'age': 36, 'active': true },
+    { 'user': 'fred',    'age': 40, 'active': false },
+    { 'user': 'pebbles', 'age': 1,  'active': true }
+  ];
+
+  // Lodash
+  var array =  _.pluck(users, 'age');
+  console.log(array); // → [36, 40, 1]
+
+  // Native
+  var array =  users.map(value => value.age);
+  console.log(array); // → [36, 40, 1]
 ```
 
 
@@ -168,68 +290,6 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   console.log(result);　// → -2
 ```
 
-
-## _.filter
-
-引数として与えられたテスト関数を各配列要素に対して実行し、それに合格したすべての配列要素からなる新しい配列を生成する。
-
-```javascript
-  var array = [12, 5, 8, 130, 44];
-  function isBigEnough(value) {
-    return value >= 10;
-  } 
-
-  // Lodash
-  var filtered = _.filter(array, isBigEnough);
-  console.log(filtered);　// → [12, 130, 44]
-
-  // Native
-  var filtered = array.filter(isBigEnough);
-  console.log(filtered);　// → [12, 130, 44]
-```
-
-
-## _.find :construction: 
-
-配列内の要素が指定されたテスト関数を満たす場合、配列内の**値**を返し、そうでない場合は`undefined`を返す。
-
-```javascript
-  var users = [
-    { 'user': 'barney',  'age': 36, 'active': true },
-    { 'user': 'fred',    'age': 40, 'active': false },
-    { 'user': 'pebbles', 'age': 1,  'active': true }
-  ];
-
-  // Lodash
-  _.find(users, function(element) { return element.age < 40; }); // → object for 'barney'
-
-  // Native
-  users.find((element) => element.age < 40); // → object for 'barney'
-```
-
-
-## _.findIndex :construction: 
-
-配列内の要素が指定されたテスト関数を満たす場合、配列内の**インデックス**を返し、そうでない場合は`-1`を返す。
-
-
-```javascript
-  var users = [
-    { 'user': 'barney',  'age': 36, 'active': true },
-    { 'user': 'fred',    'age': 40, 'active': false },
-    { 'user': 'pebbles', 'age': 1,  'active': true }
-  ];
-
-  // Lodash
-  var index =  _.findIndex(users, function(element) { return element.age >= 40; });
-  console.log(index); // → 1
-
-  // Native
-  var index =  users.findIndex((element) =>  element.age >= 40);
-  console.log(index); // → 1
-```
-
-
 ## _.indexOf
 
 引数に与えられた内容と同じ内容を持つ配列要素の内、**最初**のものの添字を返します。存在しない場合は`-1`を返す。
@@ -261,21 +321,6 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   // Native
   var result = array.lastIndexOf(9);    
   console.log(result); // → 2
-```
-
-
-## _.includes :construction:
-
-特定の要素が配列に含まれているかどうかを`true`または`false`で返す。
-
-```javascript
-  var array = [1, 2, 3];
-
-  // Lodash - also called with _.contains
-  _.includes(array, 1); // → true
-
-  // Native
-  array.includes(1); // → true
 ```
 
 
@@ -398,38 +443,6 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   console.log(result); // → 'abc'
 ```
 
-## _.pluck
-
-`map`の最も一般的なユースケースであろうバージョン。プロパティの値を抽出する。
-
-```javascript
-  var users = [
-    { 'user': 'barney',  'age': 36, 'active': true },
-    { 'user': 'fred',    'age': 40, 'active': false },
-    { 'user': 'pebbles', 'age': 1,  'active': true }
-  ];
-
-  // Lodash
-  var array =  _.pluck(users, 'age');
-  console.log(array); // → [36, 40, 1]
-
-  // Native
-  var array =  users.map(value => value.age);
-  console.log(array); // → [36, 40, 1]
-```
-
-
-## _.isNumber :construction:
-
-引数に指定された値が整数かどうかを判定するメソッド。Lodashは数値かどうかを判定。
-
-```javascript
-  // Lodash
-  _.isNumber(3); // → true
-
-  // Native
-  Number.isInteger(3); // → true
-```
 
 ## _.isArray
 
@@ -531,17 +544,6 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   bound('!'); // → 'Hi fred!'
 ```
 
-
-## _.toArray :construction:
-
-配列型 (array-like) オブジェクトや反復可能 (iterable) オブジェクトから新しい`Array`インスタンスを生成する。
-
-```javascript
-  _.toArray('hello'); // → ["h", "e", "l", "l", "o"]
-
-  // Native
-  Array.from('hello'); // → ["h", "e", "l", "l", "o"]
-```
 
 ## _.values
 
