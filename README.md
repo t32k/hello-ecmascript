@@ -543,6 +543,20 @@ _.merge(users, ages); // → { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user
   Array.from('hello'); // → ["h", "e", "l", "l", "o"]
 ```
 
+## _.values
+
+オブジェクトの列挙可能なプロパティの値をもつ`array`を生成する。 
+
+```javascript
+  var foo = { a: 1, b: 2, c: 3 };
+
+  // Lodash
+  _.values(foo); // → [1, 2]
+
+  // Native
+  Object.keys(foo)..map(key => foo[key]); // → [1, 2]
+```
+
 
 # Resources
 
