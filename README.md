@@ -12,5 +12,5 @@
 
 # TOC
 
-- [Lodash to JavaScript](cs2es.md)
+- [Lodash to JavaScript](/lodash/2ecmascript.md)
 - CoffeeScript to JavaScript
