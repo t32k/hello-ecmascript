@@ -1,18 +1,16 @@
 <html>
 <head>
 	<title>Test</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+	<script src="lodash-migrate.js"></script>
 </head>
 <body>
 <script>
-var users = [
-  { 'user': 'barney', 'age': 36, 'active': true },
-  { 'user': 'fred',   'age': 40, 'active': false }
-];
 
+var object = { 'user': 'fred' };
+var other = { 'user': 'fred' };
 
-// => 'fred'
-console.log(_.pairs);
+console.log(_.indexOf([1, 2, 1, 2], 2))
 
 
 

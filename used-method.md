@@ -8,12 +8,12 @@ x  13 _.sum
 x  13 _.bind
 o  12 _.isUndefined
 x  11 _.remove
-x  10 _.includes
+o  10 _.includes
 -  9 _.wrap
 x  8 _.max
 x  8 _.each
 -  5 _.without
-o  5 _.include
+x  5 _.include 		[!RENAME]-> _.includes
 x  5 _.every
 -  4 _.union
 -  4 _.omit
@@ -36,7 +36,7 @@ o  2 _.findIndex
 -  2 _.difference
 -  2 _.defaults
 -  2 _.debounce
-x  2 _.contains
+x  2 _.contains		[!RENAME]-> _.includes
 x  1 _.trim
 -  1 _.throttle
 x  1 _.some
