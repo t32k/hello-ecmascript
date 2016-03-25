@@ -1,3 +1,4 @@
+```
 o  73 _.find
 x  24 _.map
 x  23 _.filter
@@ -51,3 +52,4 @@ x  1 _.findWhere 	[!REMOVE]-> _.find
 -  1 _.extend
 -  1 _.chunk
 -  1 _.chain
+```
